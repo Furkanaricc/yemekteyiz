@@ -130,7 +130,7 @@ class _SepetSayfaState extends State<SepetSayfa> {
                     children: [
                       Row( mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text("Toplam Sepet Tutarı: $sepetTutar ₺",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.orangeAccent),),
+                          Text("Toplam Sepet Tutarı: $sepetTutar ₺",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.orange),),
                         ],
                       ),
                       Row(mainAxisAlignment: MainAxisAlignment.end,

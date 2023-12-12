@@ -112,8 +112,11 @@ class _FavoriSayfaState extends State<FavoriSayfa> {
               },
             );
           }else  {
-            return const Center(
-              child: Text("Hata"),
+            return const Column(
+              children: [
+                Text("Henüz Favorin yok."),
+                
+              ]
             );
           }
         },
