@@ -96,6 +96,7 @@ class _YemekDetaySayfaState extends State<YemekDetaySayfa> {
                   "furkan");
               context.read<SepetSayfaCubit>().sepetYemekleriYukle();
               Navigator.pop(context,MaterialPageRoute(builder: (context)=>SepetSayfa()));
+
               //Navigator.of(context).pop();
               }, child: const Text("Sepete ekle",style: TextStyle(color: Colors.white,fontSize: 22),),
                   style: ButtonStyle(backgroundColor:  MaterialStateProperty.all<Color?>(Colors.orangeAccent))),

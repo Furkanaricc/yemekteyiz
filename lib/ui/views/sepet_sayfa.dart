@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yemekteyiz/data/entitiy/sepet_yemekler.dart';
 import 'package:yemekteyiz/ui/cubit/sepet_sayfa_cubit.dart';
+import 'package:yemekteyiz/ui/utils/bottom_nav_bar.dart';
 
 import 'anasayfa.dart';
 
@@ -129,7 +130,7 @@ class _SepetSayfaState extends State<SepetSayfa> {
                     children: [
                       Row( mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text("Toplam Sepet Tutarı: $sepetTutar ₺",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
+                          Text("Toplam Sepet Tutarı: $sepetTutar ₺",style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold,color: Colors.orangeAccent),),
                         ],
                       ),
                       Row(mainAxisAlignment: MainAxisAlignment.end,
@@ -152,8 +153,27 @@ class _SepetSayfaState extends State<SepetSayfa> {
               ],
             );
           } else {
-            return const Center(
-              child: Text("Sepet boş"),
+            return (
+              Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20.0,right: 8.0),
+                    child: SizedBox(width: 350,height: 350,
+                        child: Image.asset("images/sepet.png")),
+                  ),
+                  Text("Sepet boş",style: TextStyle(fontSize: 32,fontWeight: FontWeight.bold,color: Colors.orangeAccent),),
+                  SizedBox(width: 240, height: 60,
+                    child: ElevatedButton(onPressed: (){
+
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => RootPage(),
+                      ));
+                    }, child: const Text("Alışverişe Başla",style: TextStyle(color: Colors.white,fontSize: 22),),
+                        style: ButtonStyle(backgroundColor:  MaterialStateProperty.all<Color?>(Colors.orangeAccent))),
+                  ),
+                ],
+              )
             );
           }
         },
